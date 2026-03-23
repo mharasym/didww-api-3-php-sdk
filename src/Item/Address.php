@@ -2,11 +2,15 @@
 
 namespace Didww\Item;
 
+use Didww\Traits\Deletable;
+use Didww\Traits\Fetchable;
+use Didww\Traits\Saveable;
+
 class Address extends BaseItem
 {
-    use \Didww\Traits\Fetchable;
-    use \Didww\Traits\Saveable;
-    use \Didww\Traits\Deletable;
+    use Fetchable;
+    use Saveable;
+    use Deletable;
 
     protected $type = 'addresses';
 

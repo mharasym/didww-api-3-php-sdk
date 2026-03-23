@@ -2,11 +2,15 @@
 
 namespace Didww\Item;
 
+use Didww\Traits\Deletable;
+use Didww\Traits\Fetchable;
+use Didww\Traits\Saveable;
+
 class DidReservation extends BaseItem
 {
-    use \Didww\Traits\Fetchable;
-    use \Didww\Traits\Saveable;
-    use \Didww\Traits\Deletable;
+    use Fetchable;
+    use Saveable;
+    use Deletable;
 
     protected $type = 'did_reservations';
 

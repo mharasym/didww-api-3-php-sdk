@@ -4,11 +4,13 @@ namespace Didww\Item;
 
 use Didww\Enum\CallbackMethod;
 use Didww\Enum\ExportType;
+use Didww\Traits\Fetchable;
+use Didww\Traits\Saveable;
 
 class Export extends BaseItem
 {
-    use \Didww\Traits\Saveable;
-    use \Didww\Traits\Fetchable;
+    use Saveable;
+    use Fetchable;
 
     protected $type = 'exports';
 

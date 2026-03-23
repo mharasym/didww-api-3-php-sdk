@@ -2,11 +2,12 @@
 
 namespace Didww\Item;
 
+use Didww\Traits\HasSafeAttributes;
 use Illuminate\Support\Str;
 
 abstract class BaseItem extends \Swis\JsonApi\Client\Item
 {
-    use \Didww\Traits\HasSafeAttributes;
+    use HasSafeAttributes;
 
     protected array $persistedAttributes = [];
 
@@ -95,6 +96,14 @@ abstract class BaseItem extends \Swis\JsonApi\Client\Item
     protected function setEnumAttribute(string $key, mixed $value): void
     {
         $this->attributes[$key] = $value instanceof \BackedEnum ? $value->value : $value;
+    }
+
+    protected function setEnumArrayAttribute(string $key, array $values): void
+    {
+        $this->attributes[$key] = array_map(
+            fn ($v) => $v instanceof \BackedEnum ? $v->value : $v,
+            $values
+        );
     }
 
     protected function dateAttribute(string $key): ?\DateTime

@@ -2,12 +2,14 @@
 
 namespace Didww\Item;
 
+use Didww\Traits\Deletable;
+use Didww\Traits\Fetchable;
 use Didww\UploadResult;
 
 class EncryptedFile extends BaseItem
 {
-    use \Didww\Traits\Fetchable;
-    use \Didww\Traits\Deletable;
+    use Fetchable;
+    use Deletable;
 
     protected $type = 'encrypted_files';
 

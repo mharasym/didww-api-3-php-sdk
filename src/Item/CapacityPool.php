@@ -2,10 +2,13 @@
 
 namespace Didww\Item;
 
+use Didww\Traits\Fetchable;
+use Didww\Traits\Saveable;
+
 class CapacityPool extends BaseItem
 {
-    use \Didww\Traits\Saveable;
-    use \Didww\Traits\Fetchable;
+    use Saveable;
+    use Fetchable;
 
     protected $type = 'capacity_pools';
 

@@ -2,10 +2,13 @@
 
 namespace Didww\Item;
 
+use Didww\Traits\Deletable;
+use Didww\Traits\Saveable;
+
 class Proof extends BaseItem
 {
-    use \Didww\Traits\Saveable;
-    use \Didww\Traits\Deletable;
+    use Saveable;
+    use Deletable;
 
     protected $type = 'proofs';
 
